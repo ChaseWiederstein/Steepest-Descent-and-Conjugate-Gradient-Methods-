@@ -51,9 +51,12 @@ b_{\text{test}} =
 86
 \end{pmatrix}
 ```
-The solution \( x = \begin{pmatrix} 1 \\ 2 \\ 3 \\ 4 \end{pmatrix} \) was verified after convergence.
+The solution ```math
+x = \begin{pmatrix} 1 \\ 2 \\ 3 \\ 4 \end{pmatrix}
+``` was verified after convergence.
 
 ## Conclusion
 
-This study emphasizes the importance of tailored approaches to solving linear systems. The choice of method and preconditioner should be informed by the properties of the matrix \( A \) to achieve optimal performance.
-
+This study emphasizes the importance of tailored approaches to solving linear systems. The choice of method and preconditioner should be informed by the properties of the matrix ```math
+A
+``` to achieve optimal performance.
