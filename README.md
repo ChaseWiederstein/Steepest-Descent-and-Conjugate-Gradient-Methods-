@@ -1,7 +1,7 @@
 # README: Analysis of Preconditioned Steepest Descent and Preconditioned Conjugate Gradient Methods
 
 ## Executive Summary
-This paper explores the differences between two fundamental algorithms—Preconditioned Steepest Descent (PSD) and Preconditioned Conjugate Gradient (PCG)—which are crucial for efficiently solving large-scale linear systems and optimization problems across various domains, including machine learning and scientific computing. The study focuses on an \( n \\times n \) symmetric positive definite (SPD) matrix \( A \) and evaluates the effectiveness of three preconditioners: the identity, Jacobi, and symmetric Gauss-Seidel. Results are presented for matrix sizes \( n = 20 \) and \( n = 200 \), with a focus on performance metrics such as convergence speed and error analysis.
+This paper explores the differences between two fundamental algorithms—Preconditioned Steepest Descent (PSD) and Preconditioned Conjugate Gradient (PCG)—which are crucial for efficiently solving large-scale linear systems and optimization problems across various domains, including machine learning and scientific computing. The study focuses on an ```math \( n \\times n \) ``` symmetric positive definite (SPD) matrix \( A \) and evaluates the effectiveness of three preconditioners: the identity, Jacobi, and symmetric Gauss-Seidel. Results are presented for matrix sizes \( n = 20 \) and \( n = 200 \), with a focus on performance metrics such as convergence speed and error analysis.
 
 ## Key Sections
 1. **Description of the Algorithms and Implementation**:
