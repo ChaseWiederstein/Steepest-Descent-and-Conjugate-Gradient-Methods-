@@ -19,5 +19,7 @@ This project explores the differences between two fundamental algorithms—Preco
 4. **Conclusion**:
    - The study emphasizes the significant impact of matrix generation and preconditioner choice on convergence performance, highlighting the importance of tailored approaches in solving linear systems.
 
-## Usage
-This paper can serve as a resource for researchers and practitioners interested in numerical methods for solving linear systems. The findings illustrate the efficacy of preconditioners in enhancing convergence rates, which is especially relevant in fields requiring high-performance computing.
+## Project Files
+- **Paper**: [gradientproject.pdf](gradientproject.pdf) – Describes the methods, results, and analysis in detail.  
+- **Code**: [project.cpp](project.cpp) – Contains the implementation of the three quadrature methods.  
+
