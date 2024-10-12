@@ -1,62 +1,23 @@
-# README
+# README: Analysis of Preconditioned Steepest Descent and Preconditioned Conjugate Gradient Methods
 
 ## Executive Summary
+This paper explores the differences between two fundamental algorithms—Preconditioned Steepest Descent (PSD) and Preconditioned Conjugate Gradient (PCG)—which are crucial for efficiently solving large-scale linear systems and optimization problems across various domains, including machine learning and scientific computing. The study focuses on an \( n \\times n \) symmetric positive definite (SPD) matrix \( A \) and evaluates the effectiveness of three preconditioners: the identity, Jacobi, and symmetric Gauss-Seidel. Results are presented for matrix sizes \( n = 20 \) and \( n = 200 \), with a focus on performance metrics such as convergence speed and error analysis.
 
-This paper analyzes the differences between the Preconditioned Steepest Descent (PSD) and Preconditioned Conjugate Gradient (PCG) methods, two foundational algorithms for efficiently solving large-scale linear systems and optimization problems in machine learning, engineering, and scientific computing. The study focuses on an \( n \times n \) symmetric positive definite (SPD) matrix \( A \) using three preconditioners: identity, Jacobi, and symmetric Gauss-Seidel. We evaluate the performance of PSD and PCG with different matrix generation techniques for \( n = 20 \) and \( n = 200 \), discussing convergence speeds and errors.
+## Key Sections
+1. **Description of the Algorithms and Implementation**:
+   - **Matrix Generation**: Two methods are used to create SPD matrices: direct symmetrization and Cholesky-based construction.
+   - **Preconditioner Generation**: The identity matrix, Jacobi, and symmetric Gauss-Seidel preconditioners are discussed in detail.
+   - **Algorithm Overview**: Detailed implementations of both PSD and PCG methods, including initialization and iteration processes.
 
-## Description of the Algorithms and Implementation
+2. **Experimental Design and Results**:
+   - The performance of the algorithms is evaluated through extensive trials, highlighting differences in convergence across various preconditioners.
+   - Graphical representations and statistical summaries of iterations required for convergence are provided for both matrix generation methods.
 
-### Generating Matrix \( A \)
+3. **Correctness Test**:
+   - The accuracy of the implemented algorithms is validated through a correctness test, ensuring solutions align with expected results.
 
-Two methods were employed to generate a symmetric positive definite matrix:
-1. **Direct Symmetrization**: Random double-precision floating-point numbers between 0 and 1 are generated such that \( A_1[i, j] = A_1[j, i] \) for all \( i, j \). A constant of 10 is added to the diagonal.
-2. **Cholesky-based Construction**: A lower triangular matrix \( L \) is generated with random values, and then \( A_2 \) is computed as \( A_2 = LL^T + 5I \). This ensures \( A_2 \) is SPD and improves numerical stability.
+4. **Conclusion**:
+   - The study emphasizes the significant impact of matrix generation and preconditioner choice on convergence performance, highlighting the importance of tailored approaches in solving linear systems.
 
-### Generating Preconditioners
-
-Preconditioners were generated as follows:
-- **Identity**: The simplest form.
-- **Jacobi Preconditioner**: Defined as \( P_{\text{Jacobi}} = \text{diag}(A) \).
-- **Symmetric Gauss-Seidel**: Given by \( P_{\text{SGS}} = (D-E)D^{-1}(D - E^T) \).
-
-### Experimental Design and Results
-
-During each iteration, values of \( ||r_k||_2 \) and relative error \( \frac{||x_k - x^*||_2}{||x^*||_2} \) were recorded. We plotted the logarithm of these errors against iteration numbers using R.
-
-#### Results for Matrix \( A_1 \)
-
-Using \( A_1 \) demonstrated that PSGS consistently outperformed other preconditioners. The results indicate that PSGS achieves faster convergence for both \( n = 20 \) and \( n = 200 \).
-
-#### Results for Matrix \( A_2 \)
-
-Similar trends were observed, though PSGS's performance varied based on matrix generation methods, highlighting the influence of matrix conditioning on convergence.
-
-### Correctness Test
-
-A correctness test using the matrix 
-```math
-A_{\text{test}} =
-\begin{pmatrix}
-5 & 7 & 6 & 5 \\
-7 & 10 & 8 & 7 \\
-6 & 8 & 11 & 9 \\
-5 & 7 & 9 & 10
-\end{pmatrix},
-\quad
-b_{\text{test}} =
-\begin{pmatrix}
-57 \\
-79 \\
-88 \\
-86
-\end{pmatrix}
-```
-The solution ```math
-x = \begin{pmatrix} 1 \\ 2 \\ 3 \\ 4 \end{pmatrix}
-``` was verified after convergence.
-
-## Conclusion
-
-This study emphasizes the importance of tailored approaches to solving linear systems. The choice of method and preconditioner should be informed by the properties of the matrix ```math
-A
-``` to achieve optimal performance.
+## Usage
+This paper can serve as a resource for researchers and practitioners interested in numerical methods for solving linear systems. The findings illustrate the efficacy of preconditioners in enhancing convergence rates, which is especially relevant in fields requiring high-performance computing.
